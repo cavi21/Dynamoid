@@ -1,7 +1,7 @@
 # encoding: utf-8
 module Dynamoid #:nodoc:
 
-  # The belongs_to association. For belongs_to, we reference only a single target instead of multiple records; that target is the 
+  # The belongs_to association. For belongs_to, we reference only a single target instead of multiple records; that target is the
   # object to which the association object is associated.
   module Associations
     class BelongsTo
@@ -24,7 +24,7 @@ module Dynamoid #:nodoc:
           return has_one_key_name if target_class.associations[has_one_key_name][:type] == :has_one
         end
       end
-      
+
       # Associate a source object to this association.
       #
       # @since 0.2.0
@@ -34,11 +34,11 @@ module Dynamoid #:nodoc:
 
       # Disassociate a source object from this association.
       #
-      # @since 0.2.0      
+      # @since 0.2.0
       def disassociate_target(object)
         source.update_attribute(source_attribute, target_ids - Array(source.hash_key))
       end
     end
   end
-  
+
 end

@@ -1,5 +1,6 @@
 class Subscription
   include Dynamoid::Document
+  table :key => :subs_id
 
   field :length, :integer
 
