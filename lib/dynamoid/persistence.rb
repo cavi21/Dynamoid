@@ -66,7 +66,7 @@ module Dynamoid
       #
       # @since 0.2.0
       def undump(incoming = nil)
-        incoming = (incoming || {}).symbolize_keys
+        incoming = incoming.to_h.symbolize_keys
         Hash.new.tap do |hash|
           self.attributes.each do |attribute, options|
             hash[attribute] = undump_field(incoming[attribute], options)

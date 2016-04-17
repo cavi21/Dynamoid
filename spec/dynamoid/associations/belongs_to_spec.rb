@@ -16,7 +16,6 @@ describe Dynamoid::Associations::BelongsTo do
       expect(camel_case.magazine.send(:target_association)).to eq :camel_cases
     end
 
-
     it 'delegates equality to its source record' do
       expect(subscription.magazine).to eq magazine
       expect(magazine.subscriptions).to include subscription
